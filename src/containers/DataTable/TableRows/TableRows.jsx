@@ -22,20 +22,7 @@ export const TableRows = (props) => {
             </tr>
             </thead>
             <tbody>
-            {props.data.map((item, key) => {
-                return (
-                    item.id > myData.tableItems.maxTableItems * myData.currentPage.currentPage - myData.tableItems.maxTableItems
-                    &&
-                    item.id <= myData.tableItems.maxTableItems * myData.currentPage.currentPage ?
-                        <TableItem
-                            position={item.position}
-                            location={item.location}
-                            price={item.price}
-                            key={item.id}
-                        /> : null
 
-                )
-            })}
 
             {props.data.map((item, key) => {
                 return (
