@@ -1,46 +1,40 @@
-import {useContext} from "react";
-import s from '../DataTable.module.scss'
-import {TableItem} from "../TableItem/TableItem";
-import {StoreContext} from "../../../App";
-
+import { useContext } from 'react'
+import styles from '../DataTable.module.scss'
+import { TableItem } from '../../../components/TableItem/TableItem'
+import useStore from "../../../hooks/useStore";
 
 export const TableRows = (props) => {
-    const myData = useContext(StoreContext)
+  const {tableItems,currentPage} = useStore();
 
-    return (
-        <table>
+  return (
+    <table>
+      <col span={3} className={styles.colgroup_style1} />
 
-            <col span={3} className={s.colgroup_style1}/>
+      <thead>
+        <tr>
+          {props.columns.map((column, key) => {
+            return <td key={column.id}>{column.title}</td>
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        {props.data.map((item, key) => {
+            const isItDataForRender = item.id >
+                (tableItems.maxTableItems * currentPage.currentPage - tableItems.maxTableItems)
+                &&
+                (item.id <= tableItems.maxTableItems * currentPage.currentPage);
 
-            <thead>
-            <tr>
-                {props.columns.map((column, key) => {
-                    return (
-                        <td key={column.id}>{column.title}</td>
-                    )
-                })}
-            </tr>
-            </thead>
-            <tbody>
-
-
-            {props.data.map((item, key) => {
-                return (
-                    item.id > myData.tableItems.maxTableItems * myData.currentPage.currentPage - myData.tableItems.maxTableItems
-                    &&
-                    item.id <= myData.tableItems.maxTableItems * myData.currentPage.currentPage ?
-                        <TableItem
-                            position={item.position}
-                            location={item.location}
-                            price={item.price}
-                            key={item.id}
-                        /> : null
-
-                )
-            })}
-
-
-            </tbody>
-        </table>
-    )
+          return isItDataForRender &&
+              (
+            <TableItem
+              position={item.position}
+              location={item.location}
+              price={item.price}
+              key={item.location}
+            />
+          )
+        })}
+      </tbody>
+    </table>
+  )
 }

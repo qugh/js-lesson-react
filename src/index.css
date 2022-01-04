@@ -2,12 +2,12 @@
   font-family: "Abel";
   font-style: normal;
   font-weight: 400;
-  src: url("./fonts/abel-v12-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local(""), url("./fonts/abel-v12-latin-regular.eot?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */ url("./fonts/abel-v12-latin-regular.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("./fonts/abel-v12-latin-regular.woff") format("woff"),
-    /* Modern Browsers */ url("./fonts/abel-v12-latin-regular.ttf") format("truetype"),
-    /* Safari, Android, iOS */ url("./fonts/abel-v12-latin-regular.svg#Abel") format("svg"); /* Legacy iOS */
+  src: url("assets/fonts/abel-v12-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("assets/fonts/abel-v12-latin-regular.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("assets/fonts/abel-v12-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("assets/fonts/abel-v12-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("assets/fonts/abel-v12-latin-regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("assets/fonts/abel-v12-latin-regular.svg#Abel") format("svg"); /* Legacy iOS */
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

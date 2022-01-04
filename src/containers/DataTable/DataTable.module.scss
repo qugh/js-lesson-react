@@ -26,7 +26,8 @@
       }
     }
 
-    td, th {
+    td,
+    th {
       padding: 16.5px;
     }
 
@@ -156,14 +157,16 @@
       width: 64px;
       margin-right: 15px;
     }
-
     .jump_block {
       .jump_Alert {
         opacity: 0;
-        transition: opacity 0.3s ease-in;
+        transition: opacity 0.3s ease-in-out;
+      }
+      .visible{
+        opacity:1;
       }
 
-      display: none;
+      display: block;
 
       .jump_toThePage {
         color: #2f80ed;
@@ -189,6 +192,9 @@
           box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
         }
       }
+    }
+    .hidden {
+      display:none;
     }
   }
 }

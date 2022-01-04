@@ -51,6 +51,16 @@
           fill: white;
           border-radius: 50%;
         }
+        .fill_red{
+          path{
+            fill:red;
+          }
+        }
+        .fill_white{
+          path{
+            fill:white;
+          }
+        }
 
         .like_test {
           fill: red;
