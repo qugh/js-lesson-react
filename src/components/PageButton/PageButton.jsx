@@ -1,10 +1,9 @@
 import clsx from "clsx";
 import styles from "../../containers/DataTable/DataTable.module.scss";
-import {StoreContext} from "../../App";
-import {useContext} from "react";
+import useStore from "../../hooks/useStore";
 
 export const PageButton = ({pageNumber}) => {
-    const myContext = useContext(StoreContext)
+    const myContext = useStore();
     return(
         <div>
             <button

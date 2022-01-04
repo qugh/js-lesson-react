@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import styles from '../DataTable.module.scss'
 import { TableItem } from '../../../components/TableItem/TableItem'
 import useStore from "../../../hooks/useStore";

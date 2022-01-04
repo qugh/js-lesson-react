@@ -1,10 +1,10 @@
 import styles from "../../containers/DataTable/DataTable.module.scss";
-import { StoreContext } from "../../App";
-import {useContext, useEffect, useRef, useState} from "react";
+import { useEffect, useRef} from "react";
 import { JumpToThePage } from "../../containers/DataTable/jumpToThePage/jumpToThePage";
+import useStore from "../../hooks/useStore";
 export const PageToSee = ({pagesCount}) => {
     const selectRef = useRef(null);
-    const myContext = useContext(StoreContext);
+    const myContext = useStore();
     useEffect(() => {
         if (selectRef.current) {
             selectRef.current.scrollIntoView({
@@ -20,7 +20,7 @@ export const PageToSee = ({pagesCount}) => {
         ref={selectRef}
         className={styles.elements_count}
         onChange={(event) => {
-          myContext.tableItems.setMaxTableItems(event.target.value);
+          myContext.tableItems.setMaxTableItems(parseInt(event.target.value));
           myContext.currentPage.setCurrentPage(1);
         }}
       >

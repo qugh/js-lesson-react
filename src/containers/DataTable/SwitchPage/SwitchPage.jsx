@@ -23,7 +23,7 @@ export const SwitchPage = (props) => {
   if (pagesCount > 9) {
 
     for (let i = 1; i <= 3; i++) {
-      buttonArray.push(<PageButton pageNumber={i} />)
+      buttonArray.push(<PageButton  pageNumber={i} />)
     }
 
     buttonArray.push(<MiddleButton />)
